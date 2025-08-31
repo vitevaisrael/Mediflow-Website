@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply text-slate-800 antialiased;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent;
+}
+
+.glass-effect {
+  @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl;
+}
+
+.medical-gradient {
+  @apply bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  to {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+  }
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
