@@ -33,17 +33,19 @@ const Header = () => {
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <motion.div
+          <motion.button
             whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2 cursor-pointer"
-            onClick={() => scrollToSection('hero')}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center space-x-3 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-lg p-2 transition-all duration-300"
+            onClick={() => scrollToSection('about')}
+            aria-label="Go to About section"
           >
             <img
-              src="https://horizons-cdn.hostinger.com/1c73b180-06cb-4a03-9009-3e0b2c62f2b2/45770cc82720412568157215dc95d08e.png"
+              src="/src/assets/mediflow_logo_tight_crop.png"
               alt="MediFlow Logo"
-              className="h-8"
+              className="h-16 w-auto object-contain"
             />
-          </motion.div>
+          </motion.button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -51,14 +53,14 @@ const Header = () => {
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-slate-700 hover:text-blue-600 font-medium transition-colors duration-200"
+                className="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-200"
               >
                 {item}
               </button>
             ))}
             <Button
               onClick={() => scrollToSection('contact')}
-              className="medical-gradient text-white hover:shadow-lg transition-all duration-300"
+              className="medical-gradient text-white hover:medical-gradient-hover hover:shadow-lg transition-all duration-300"
             >
               Get Started
             </Button>
@@ -70,9 +72,9 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className="h-6 w-6 text-slate-700" />
+              <X className="h-6 w-6 text-gray-800" />
             ) : (
-              <Menu className="h-6 w-6 text-slate-700" />
+              <Menu className="h-6 w-6 text-gray-800" />
             )}
           </button>
         </div>
@@ -88,14 +90,14 @@ const Header = () => {
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="block w-full text-left py-2 text-slate-700 hover:text-blue-600 font-medium"
+                className="block w-full text-left py-2 text-gray-800 hover:text-blue-600 font-medium"
               >
                 {item}
               </button>
             ))}
             <Button
               onClick={() => scrollToSection('contact')}
-              className="w-full mt-4 medical-gradient text-white"
+              className="w-full mt-4 medical-gradient text-white hover:medical-gradient-hover"
             >
               Get Started
             </Button>

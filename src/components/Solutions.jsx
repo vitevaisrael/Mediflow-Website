@@ -53,7 +53,7 @@ const Solutions = () => {
   };
 
   return (
-    <section id="solutions" className="py-20 px-6 bg-gradient-to-br from-slate-50 to-blue-50">
+    <section id="solutions" className="py-20 px-6 bg-gradient-to-br from-blue-50 to-purple-50">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -62,11 +62,11 @@ const Solutions = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
             Comprehensive{' '}
             <span className="gradient-text">Healthcare Solutions</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Our integrated suite of AI-powered tools transforms how healthcare organizations 
             manage data, make decisions, and deliver patient care.
           </p>
@@ -86,14 +86,14 @@ const Solutions = () => {
                 <solution.icon className="h-8 w-8 text-white" />
               </div>
               
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">{solution.title}</h3>
-              <p className="text-slate-600 mb-6 leading-relaxed">{solution.description}</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">{solution.title}</h3>
+              <p className="text-gray-700 mb-6 leading-relaxed">{solution.description}</p>
               
               <ul className="space-y-2 mb-6">
                 {solution.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-sm text-slate-600">{feature}</span>
+                    <span className="text-sm text-gray-600">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -101,7 +101,7 @@ const Solutions = () => {
               <Button
                 onClick={() => handleLearnMore(solution.title)}
                 variant="outline"
-                className="w-full border-blue-200 hover:bg-blue-50 transition-all duration-300"
+                className="w-full border-gray-300 hover:bg-gray-50 text-gray-700 hover:text-gray-800 transition-all duration-300"
               >
                 Learn More
               </Button>
@@ -117,10 +117,10 @@ const Solutions = () => {
           transition={{ duration: 0.8 }}
           className="mt-20 text-center glass-effect rounded-2xl p-12"
         >
-          <h3 className="text-3xl font-bold text-slate-800 mb-4">
+          <h3 className="text-3xl font-bold text-gray-900 mb-4">
             Ready to Transform Your Healthcare Operations?
           </h3>
-          <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
             Join hundreds of healthcare organizations already using MediFlow to improve 
             patient outcomes and operational efficiency.
           </p>
@@ -132,7 +132,7 @@ const Solutions = () => {
               }
             }}
             size="lg"
-            className="medical-gradient text-white hover:shadow-xl transition-all duration-300"
+            className="medical-gradient text-white hover:medical-gradient-hover hover:shadow-xl transition-all duration-300"
           >
             Schedule a Demo
           </Button>

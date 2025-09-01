@@ -1,24 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Ensure no duplicate logos */
+img[alt="MediFlow Logo"] {
+  display: block !important;
+}
 
 body {
   font-family: 'Inter', sans-serif;
-  @apply text-slate-800 antialiased;
+  @apply text-gray-900 antialiased;
 }
 
 .gradient-text {
-  @apply bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-purple-600 via-blue-600 to-teal-500 bg-clip-text text-transparent;
 }
 
 .glass-effect {
-  @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl;
+  @apply bg-white/85 backdrop-blur-xl border border-purple-100/40 shadow-2xl;
 }
 
 .medical-gradient {
-  @apply bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700;
+  @apply bg-gradient-to-br from-purple-600 via-blue-600 to-teal-500;
+}
+
+.medical-gradient-hover {
+  @apply bg-gradient-to-br from-purple-700 via-blue-700 to-teal-600;
+}
+
+.text-primary {
+  @apply text-gray-900;
+}
+
+.text-secondary {
+  @apply text-gray-700;
+}
+
+.text-accent {
+  @apply text-purple-600;
+}
+
+.text-muted {
+  @apply text-gray-500;
+}
+
+.bg-primary {
+  @apply bg-gray-50;
+}
+
+.bg-secondary {
+  @apply bg-purple-50;
+}
+
+.border-primary {
+  @apply border-gray-200;
+}
+
+.border-secondary {
+  @apply border-purple-200;
 }
 
 .pulse-glow {

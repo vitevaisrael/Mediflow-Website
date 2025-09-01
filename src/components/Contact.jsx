@@ -51,14 +51,14 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      content: 'mediflowy@gmail.com',
+      content: 'contact@mediflow.io',
       description: 'Send us an email anytime'
     },
     {
       icon: Phone,
       title: 'Call Us',
       content: '+972 53-5236450',
-      description: 'Mon-Fri from 8am to 6pm'
+      description: 'we will get back to you within 24 hours'
     }
   ];
 
