@@ -14,7 +14,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="pt-24 pb-16 px-6 overflow-hidden">
+    <section id="hero" className="pt-20 pb-16 px-6 overflow-hidden">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}

@@ -29,27 +29,27 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-effect' : 'bg-transparent'
+        isScrolled ? 'glass-effect rounded-b-2xl' : 'bg-transparent'
       }`}
     >
-      <nav className="container mx-auto px-6 py-4">
+      <nav className={`container mx-auto px-6 transition-all duration-300 ${isScrolled ? 'py-1' : 'py-2'}`}>
         <div className="flex items-center justify-between">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center space-x-3 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-lg p-2 transition-all duration-300"
+            className="flex items-center space-x-2 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-lg p-1 transition-all duration-300"
             onClick={() => scrollToSection('about')}
             aria-label="Go to About section"
           >
             <img
               src={logoImage}
               alt="MediFlow Logo"
-              className="h-16 w-auto object-contain"
+              className={`w-auto object-contain transition-all duration-300 ${isScrolled ? 'h-10' : 'h-12'}`}
             />
           </motion.button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {['About', 'Solutions', 'Contact'].map((item) => (
               <button
                 key={item}
