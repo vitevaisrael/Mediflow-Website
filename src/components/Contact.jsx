@@ -28,23 +28,35 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      if (!response.ok || !result.ok) {
+        throw new Error(result.error || 'Failed to send');
+      }
+
       toast({
-        title: "Message Sent Successfully! ✅",
-        description: "Thank you for your interest in MediFlow. Our team will contact you within 24 hours.",
+        title: 'Message sent successfully! ✅',
+        description: 'Thank you for your interest in MediFlow. We will get back to you shortly.',
         duration: 5000,
       });
-      
-      setFormData({
-        name: '',
-        email: '',
-        organization: '',
-        phone: '',
-        message: ''
-      });
+
+      setFormData({ name: '', email: '', organization: '', phone: '', message: '' });
+    } catch (err) {
+      console.error(err);
+              toast({
+          title: 'Sending failed',
+          description: 'Please try again or email us at contact@mediflow.io.',
+          duration: 5000,
+        });
+    } finally {
       setIsSubmitting(false);
-    }, 2000);
+    }
   };
 
   const contactInfo = [
@@ -177,7 +189,7 @@ const Contact = () => {
                 {isSubmitting ? (
                   <div className="flex items-center space-x-2">
                     <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    <span>Sending...</span>
+                    <span>Preparing email…</span>
                   </div>
                 ) : (
                   <div className="flex items-center space-x-2">

@@ -12,10 +12,10 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>MediFlow - AI-Powered Medical Data Management & Clinical Decision Support</title>
-        <meta name="description" content="Transform healthcare with MediFlow's advanced AI-powered medical data management and clinical decision support solutions. Streamline workflows and improve patient outcomes." />
-        <meta property="og:title" content="MediFlow - AI-Powered Medical Data Management & Clinical Decision Support" />
-        <meta property="og:description" content="Transform healthcare with MediFlow's advanced AI-powered medical data management and clinical decision support solutions. Streamline workflows and improve patient outcomes." />
+        <title>Mediflow - Intelligent Medicine</title>
+        <meta name="description" content="Transform healthcare with Mediflow's intelligent medicine solutions. Advanced AI-powered medical data management and clinical decision support." />
+        <meta property="og:title" content="Mediflow - Intelligent Medicine" />
+        <meta property="og:description" content="Transform healthcare with Mediflow's intelligent medicine solutions. Advanced AI-powered medical data management and clinical decision support." />
       </Helmet>
       
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">

@@ -2,10 +2,14 @@
 	"name": "web-app",
 	"type": "module",
 	"version": "0.0.0",
-	"engines": { "node": ">=18" },
+	"engines": {
+		"node": ">=18"
+	},
 	"private": true,
 	"scripts": {
 		"dev": "vite",
+		"server": "node server.js",
+		"dev:all": "concurrently \"npm run server\" \"npm run dev\"",
 		"build": "vite build",
 		"preview": "vite preview"
 	},
@@ -23,11 +27,16 @@
 		"@radix-ui/react-toast": "^1.1.5",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.0.0",
+		"concurrently": "^9.2.1",
+		"cors": "^2.8.5",
+		"dotenv": "^17.2.1",
+		"express": "^5.1.0",
 		"framer-motion": "^10.16.4",
 		"lucide-react": "^0.285.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-helmet": "^6.1.0",
+		"resend": "^6.0.2",
 		"tailwind-merge": "^1.14.0",
 		"tailwindcss-animate": "^1.0.7"
 	},
