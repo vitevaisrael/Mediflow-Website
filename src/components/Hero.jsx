@@ -14,7 +14,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="pt-20 pb-16 px-6 overflow-hidden">
+    <section id="hero" className="pt-20 pb-16 px-4 lg:px-8 xl:px-12 overflow-hidden">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -107,12 +107,12 @@ const Hero = () => {
               duration: 0.8,
               delay: 0.3
             }}
-            className="relative"
+            className="relative mt-8"
           >
-            <div className="relative">
+            <div className="relative w-full max-w-lg mx-auto">
               <img
                 alt="Medical professionals using AI technology for data analysis"
-                className="rounded-2xl shadow-2xl floating"
+                className="rounded-2xl shadow-2xl floating w-full"
                 src="https://horizons-cdn.hostinger.com/1c73b180-06cb-4a03-9009-3e0b2c62f2b2/generated-image-august-31-2025---1_19pm-vtf0V.jpeg"
               />
               
@@ -129,11 +129,11 @@ const Hero = () => {
                 transition={{
                   delay: 0.8
                 }}
-                className="absolute -top-4 -left-4 glass-effect rounded-xl p-4 pulse-glow"
+                className="absolute -top-4 -left-4 glass-effect rounded-xl p-3 pulse-glow"
               >
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-teal-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium text-gray-800">Real-time Analysis</span>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
+                  <span className="text-xs font-medium text-gray-800">Real-time Analysis</span>
                 </div>
               </motion.div>
               
@@ -149,10 +149,10 @@ const Hero = () => {
                 transition={{
                   delay: 1
                 }}
-                className="absolute -bottom-4 -right-4 glass-effect rounded-xl p-4"
+                className="absolute -bottom-4 -right-4 glass-effect rounded-xl p-3"
               >
                 <div className="text-center">
-                  <div className="text-2xl font-bold gradient-text">99.7%</div>
+                  <div className="text-lg font-bold gradient-text">99.7%</div>
                   <div className="text-xs text-gray-600">Accuracy Rate</div>
                 </div>
               </motion.div>
