@@ -2,54 +2,67 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Database, Brain, Shield, Zap, BarChart3, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 import { toast } from '@/components/ui/use-toast';
 
 const Solutions = () => {
+  const navigate = useNavigate();
+  
   const solutions = [
     {
       icon: Database,
       title: 'Medical Data Organization',
       description: 'Transform unstructured medical records into organized, searchable databases with automated categorization and intelligent tagging.',
-      features: ['Automated data extraction', 'Smart categorization', 'Real-time synchronization', 'HIPAA compliance']
+      features: ['Automated data extraction', 'Smart categorization', 'Real-time synchronization', 'HIPAA compliance'],
+      route: '/solutions/medical-data-organization'
     },
     {
       icon: Brain,
       title: 'AI Clinical Decision Support',
       description: 'Leverage advanced machine learning algorithms to provide evidence-based recommendations and predictive insights for better patient outcomes.',
-      features: ['Predictive analytics', 'Risk assessment', 'Treatment recommendations', 'Outcome prediction']
+      features: ['Predictive analytics', 'Risk assessment', 'Treatment recommendations', 'Outcome prediction'],
+      route: '/solutions/ai-clinical-decision-support'
     },
     {
       icon: BarChart3,
       title: 'Advanced Analytics Platform',
       description: 'Comprehensive analytics dashboard providing deep insights into patient data, treatment efficacy, and operational efficiency.',
-      features: ['Custom dashboards', 'Real-time reporting', 'Trend analysis', 'Performance metrics']
+      features: ['Custom dashboards', 'Real-time reporting', 'Trend analysis', 'Performance metrics'],
+      route: '/solutions/advanced-analytics-platform'
     },
     {
       icon: Shield,
       title: 'Secure Data Management',
       description: 'Enterprise-grade security ensuring patient data protection with end-to-end encryption and compliance with healthcare regulations.',
-      features: ['End-to-end encryption', 'Access controls', 'Audit trails', 'Compliance monitoring']
+      features: ['End-to-end encryption', 'Access controls', 'Audit trails', 'Compliance monitoring'],
+      route: '/solutions/secure-data-management'
     },
     {
       icon: Zap,
       title: 'Workflow Automation',
       description: 'Streamline healthcare workflows with intelligent automation, reducing manual tasks and improving operational efficiency.',
-      features: ['Process automation', 'Task scheduling', 'Alert systems', 'Integration APIs']
+      features: ['Process automation', 'Task scheduling', 'Alert systems', 'Integration APIs'],
+      route: '/solutions/workflow-automation'
     },
     {
       icon: Users,
       title: 'Collaborative Platform',
       description: 'Enable seamless collaboration between healthcare teams with shared insights, secure communication, and coordinated care plans.',
-      features: ['Team collaboration', 'Secure messaging', 'Shared insights', 'Care coordination']
+      features: ['Team collaboration', 'Secure messaging', 'Shared insights', 'Care coordination'],
+      route: '/solutions/collaborative-platform'
     }
   ];
 
-  const handleLearnMore = (title) => {
-    toast({
-      title: "🚧 Feature Details",
-      description: "This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀",
-      duration: 3000,
-    });
+  const handleLearnMore = (solution) => {
+    if (solution.route) {
+      navigate(solution.route);
+    } else {
+      toast({
+        title: "🚧 Feature Details",
+        description: "This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀",
+        duration: 3000,
+      });
+    }
   };
 
   return (
@@ -99,7 +112,7 @@ const Solutions = () => {
               </ul>
               
               <Button
-                onClick={() => handleLearnMore(solution.title)}
+                onClick={() => handleLearnMore(solution)}
                 variant="outline"
                 className="w-full border-gray-300 hover:bg-gray-50 text-gray-700 hover:text-gray-800 transition-all duration-300"
               >
