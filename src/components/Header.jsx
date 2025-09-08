@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logoImage from '@/assets/mediflow_logo_tight_crop.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,7 +42,7 @@ const Header = () => {
             aria-label="Go to About section"
           >
             <img
-              src="/src/assets/mediflow_logo_tight_crop.png"
+              src={logoImage}
               alt="MediFlow Logo"
               className="h-16 w-auto object-contain"
             />
