@@ -114,9 +114,14 @@ const Solutions = () => {
               <Button
                 onClick={() => handleLearnMore(solution)}
                 variant="outline"
-                className="w-full border-gray-300 hover:bg-gray-50 text-gray-700 hover:text-gray-800 transition-all duration-300"
+                className="w-3/4 mx-auto border-2 border-gray-300 hover:border-blue-500 hover:bg-blue-50 text-gray-700 hover:text-blue-700 transition-all duration-300 rounded-xl shadow-sm hover:shadow-md font-medium py-3 group"
               >
-                Learn More
+                <span className="group-hover:translate-x-1 transition-transform duration-300 inline-flex items-center">
+                  Learn More
+                  <svg className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
               </Button>
             </motion.div>
           ))}
