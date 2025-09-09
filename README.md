@@ -7,6 +7,7 @@ A modern, responsive healthcare technology website built with React, Vite, and T
 - **Responsive Design**: Optimized for all devices
 - **Modern UI**: Built with Tailwind CSS and Framer Motion animations
 - **Contact Form**: Integrated email functionality via Vercel serverless functions
+- **Spam Protection**: Rate limiting and optional CAPTCHA verification
 - **Solution Pages**: Dedicated pages for each healthcare solution
 - **SEO Optimized**: React Helmet for meta tags and SEO
 
@@ -88,6 +89,7 @@ For production (Vercel), set these environment variables:
 - `GMAIL_USER`: Your Gmail address
 - `GMAIL_APP_PASSWORD`: Your Gmail App Password (16 characters)
 - `TO_EMAIL`: Email address to receive contact form submissions
+- `RECAPTCHA_SECRET` or `HCAPTCHA_SECRET` (optional): CAPTCHA verification secrets
 
 ## 🚀 Deployment
 
