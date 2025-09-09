@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import sanitizeHtml from 'sanitize-html';
 
 export default async function handler(req, res) {
   // Only allow POST requests
@@ -8,6 +9,15 @@ export default async function handler(req, res) {
 
   try {
     const { name, email, organization, phone, message } = req.body || {};
+
+    const sanitize = (value) =>
+      sanitizeHtml(value ?? '', { allowedTags: [], allowedAttributes: {} });
+
+    const cleanName = sanitize(name);
+    const cleanEmail = sanitize(email);
+    const cleanOrg = sanitize(organization);
+    const cleanPhone = sanitize(phone);
+    const cleanMessage = sanitize(message);
 
     // Validate required fields
     if (!email || !message || !name) {
@@ -23,22 +33,22 @@ export default async function handler(req, res) {
       }
     });
 
-    const subject = `New contact from ${name}${organization ? ' - ' + organization : ''}`;
+    const subject = `New contact from ${cleanName}${cleanOrg ? ' - ' + cleanOrg : ''}`;
     const html = `
       <div style="font-family:Inter,Arial,sans-serif;line-height:1.6;color:#0f172a;">
         <h2 style="margin:0 0 12px 0;">New Contact Request</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Organization:</strong> ${organization || '-'}
-        <br/><strong>Phone:</strong> ${phone || '-'}</p>
-        <p style="white-space:pre-wrap"><strong>Message:</strong><br/>${message}</p>
+        <p><strong>Name:</strong> ${cleanName}</p>
+        <p><strong>Email:</strong> ${cleanEmail}</p>
+        <p><strong>Organization:</strong> ${cleanOrg || '-'}
+        <br/><strong>Phone:</strong> ${cleanPhone || '-'}</p>
+        <p style="white-space:pre-wrap"><strong>Message:</strong><br/>${cleanMessage}</p>
       </div>
     `;
 
     const mailOptions = {
       from: `MediFlow Website <${process.env.GMAIL_USER}>`,
       to: process.env.TO_EMAIL || 'vitevabygenore@gmail.com',
-      replyTo: email,
+      replyTo: cleanEmail,
       subject,
       html,
     };
