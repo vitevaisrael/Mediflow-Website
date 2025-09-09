@@ -15,6 +15,7 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -22,10 +23,52 @@ const Contact = () => {
       ...prev,
       [name]: value
     }));
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const validateField = (name, value) => {
+    const emailRegex = /\S+@\S+\.\S+/;
+    const phoneRegex = /^\+?[0-9\s()-]{7,}$/;
+    switch (name) {
+      case 'name':
+        if (!value.trim()) return 'Full name is required.';
+        break;
+      case 'email':
+        if (!value.trim()) return 'Email is required.';
+        if (!emailRegex.test(value)) return 'Please enter a valid email address.';
+        break;
+      case 'message':
+        if (!value.trim()) return 'Message is required.';
+        break;
+      case 'phone':
+        if (value && !phoneRegex.test(value)) return 'Please enter a valid phone number.';
+        break;
+      default:
+        break;
+    }
+    return '';
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    const error = validateField(name, value);
+    setErrors(prev => ({ ...prev, [name]: error }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const formErrors = {};
+    ['name', 'email', 'message', 'phone'].forEach(field => {
+      const error = validateField(field, formData[field]);
+      if (error) formErrors[field] = error;
+    });
+    if (Object.keys(formErrors).length) {
+      setErrors(formErrors);
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -47,13 +90,14 @@ const Contact = () => {
       });
 
       setFormData({ name: '', email: '', organization: '', phone: '', message: '' });
+      setErrors({});
     } catch (err) {
       console.error(err);
-              toast({
-          title: 'Sending failed',
-          description: 'Please try again or email us at contact@mediflow.io.',
-          duration: 5000,
-        });
+      toast({
+        title: 'Sending failed',
+        description: 'Please try again or email us at contact@mediflow.io.',
+        duration: 5000,
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -116,10 +160,17 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
+                    onBlur={handleBlur}
                     required
-                    className="w-full"
+                    aria-invalid={!!errors.name}
+                    className={`w-full ${errors.name ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                     placeholder="Dr. John Smith"
                   />
+                  {errors.name && (
+                    <p className="mt-1 text-sm text-red-600" aria-live="polite">
+                      {errors.name}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
@@ -130,10 +181,17 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
+                    onBlur={handleBlur}
                     required
-                    className="w-full"
+                    aria-invalid={!!errors.email}
+                    className={`w-full ${errors.email ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                     placeholder="john@hospital.com"
                   />
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-red-600" aria-live="polite">
+                      {errors.email}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -160,9 +218,16 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full"
+                    onBlur={handleBlur}
+                    aria-invalid={!!errors.phone}
+                    className={`w-full ${errors.phone ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                     placeholder="+1 (555) 123-4567"
                   />
+                  {errors.phone && (
+                    <p className="mt-1 text-sm text-red-600" aria-live="polite">
+                      {errors.phone}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -174,11 +239,18 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
+                  onBlur={handleBlur}
                   required
                   rows={5}
-                  className="w-full"
+                  aria-invalid={!!errors.message}
+                  className={`w-full ${errors.message ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                   placeholder="Tell us about your healthcare data challenges and how we can help..."
                 />
+                {errors.message && (
+                  <p className="mt-1 text-sm text-red-600" aria-live="polite">
+                    {errors.message}
+                  </p>
+                )}
               </div>
 
               <Button
