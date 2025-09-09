@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Brain, ArrowLeft, CheckCircle, TrendingUp, Shield, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -40,7 +41,23 @@ const AIClinicalDecisionSupport = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50">
+    <>
+      <Helmet>
+        <title>AI Clinical Decision Support | Mediflow</title>
+        <meta
+          name="description"
+          content="Evidence-based recommendations and predictive analytics to enhance clinical decisions."
+        />
+        <meta
+          property="og:title"
+          content="AI Clinical Decision Support | Mediflow"
+        />
+        <meta
+          property="og:description"
+          content="Evidence-based recommendations and predictive analytics to enhance clinical decisions."
+        />
+      </Helmet>
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50">
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="container mx-auto px-6 py-4">
@@ -150,7 +167,8 @@ const AIClinicalDecisionSupport = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

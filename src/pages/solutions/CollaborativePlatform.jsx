@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Users, ArrowLeft, CheckCircle, MessageSquare, Share2, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -40,7 +41,23 @@ const CollaborativePlatform = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50">
+    <>
+      <Helmet>
+        <title>Collaborative Healthcare Platform | Mediflow</title>
+        <meta
+          name="description"
+          content="Secure messaging and shared insights to coordinate patient care."
+        />
+        <meta
+          property="og:title"
+          content="Collaborative Healthcare Platform | Mediflow"
+        />
+        <meta
+          property="og:description"
+          content="Secure messaging and shared insights to coordinate patient care."
+        />
+      </Helmet>
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50">
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="container mx-auto px-6 py-4">
@@ -150,7 +167,8 @@ const CollaborativePlatform = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

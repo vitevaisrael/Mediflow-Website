@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Shield, ArrowLeft, CheckCircle, Lock, Eye, FileCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -40,7 +41,23 @@ const SecureDataManagement = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50">
+    <>
+      <Helmet>
+        <title>Secure Data Management | Mediflow</title>
+        <meta
+          name="description"
+          content="Encrypted, compliant solution for protecting patient information."
+        />
+        <meta
+          property="og:title"
+          content="Secure Data Management | Mediflow"
+        />
+        <meta
+          property="og:description"
+          content="Encrypted, compliant solution for protecting patient information."
+        />
+      </Helmet>
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50">
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="container mx-auto px-6 py-4">
@@ -150,7 +167,8 @@ const SecureDataManagement = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 
