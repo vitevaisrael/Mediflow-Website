@@ -220,7 +220,7 @@ const Contact = () => {
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <motion.div
-                  key={index}
+                  key={info.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -255,7 +255,7 @@ const Contact = () => {
                   'Seamless integration',
                   'Proven ROI for healthcare organizations'
                 ].map((benefit, index) => (
-                  <div key={index} className="flex items-center space-x-2">
+                  <div key={benefit} className="flex items-center space-x-2">
                     <CheckCircle className="h-5 w-5 text-green-600" />
                     <span className="text-slate-600">{benefit}</span>
                   </div>

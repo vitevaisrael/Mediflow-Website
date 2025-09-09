@@ -81,7 +81,7 @@ const CollaborativePlatform = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-20">
             {features.map((feature, index) => (
               <motion.div
-                key={index}
+                key={feature.title}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -108,7 +108,7 @@ const CollaborativePlatform = () => {
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center space-x-3">
+                <div key={benefit} className="flex items-center space-x-3">
                   <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0" />
                   <span className="text-gray-700 font-medium">{benefit}</span>
                 </div>

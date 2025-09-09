@@ -88,7 +88,7 @@ const Solutions = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {solutions.map((solution, index) => (
             <motion.div
-              key={index}
+              key={solution.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -104,7 +104,7 @@ const Solutions = () => {
               
               <ul className="space-y-2 mb-6">
                 {solution.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center space-x-2">
+                  <li key={feature} className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                     <span className="text-sm text-gray-600">{feature}</span>
                   </li>

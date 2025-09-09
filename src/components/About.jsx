@@ -147,7 +147,7 @@ const About = () => {
         >
           {stats.map((stat, index) => (
             <motion.div
-              key={index}
+              key={stat.label}
               initial={{
                 opacity: 0,
                 y: 30
