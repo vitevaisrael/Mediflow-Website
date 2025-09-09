@@ -6,6 +6,21 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/components/ui/use-toast';
 
+export const contactInfo = [
+    {
+      icon: Mail,
+      title: 'Email Us',
+      content: 'contact@mediflow.io',
+      description: 'Send us an email anytime'
+    },
+    {
+      icon: Phone,
+      title: 'Call Us',
+      content: '+972 53-5236450',
+      description: 'we will get back to you within 24 hours'
+    }
+];
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -58,21 +73,6 @@ const Contact = () => {
       setIsSubmitting(false);
     }
   };
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: 'Email Us',
-      content: 'contact@mediflow.io',
-      description: 'Send us an email anytime'
-    },
-    {
-      icon: Phone,
-      title: 'Call Us',
-      content: '+972 53-5236450',
-      description: 'we will get back to you within 24 hours'
-    }
-  ];
 
   return (
     <section id="contact" className="py-20 px-6">

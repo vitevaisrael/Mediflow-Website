@@ -2,8 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Target, Users, Award, TrendingUp } from 'lucide-react';
 
-const About = () => {
-  const stats = [
+export const stats = [
     {
       icon: Users,
       value: '500+',
@@ -24,8 +23,9 @@ const About = () => {
       value: '24/7',
       label: 'System Availability'
     }
-  ];
+];
 
+const About = () => {
   return (
     <section id="about" className="py-20 px-6">
       <div className="container mx-auto">

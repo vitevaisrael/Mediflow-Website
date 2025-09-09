@@ -4,10 +4,7 @@ import { Zap, ArrowLeft, CheckCircle, Settings, Clock, Bell } from 'lucide-react
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
-const WorkflowAutomation = () => {
-  const navigate = useNavigate();
-
-  const features = [
+export const features = [
     {
       icon: Settings,
       title: 'Process Automation',
@@ -28,16 +25,19 @@ const WorkflowAutomation = () => {
       title: 'Integration APIs',
       description: 'Seamless integration with existing healthcare systems and third-party applications through robust API connections and data synchronization.'
     }
-  ];
+];
 
-  const benefits = [
+export const benefits = [
     'Reduce manual tasks by 70%',
     'Eliminate workflow bottlenecks',
     'Improve operational efficiency',
     'Minimize human errors',
     'Optimize resource utilization',
     'Enhance staff productivity'
-  ];
+];
+
+const WorkflowAutomation = () => {
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50">

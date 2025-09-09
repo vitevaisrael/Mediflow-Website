@@ -4,10 +4,7 @@ import { Shield, ArrowLeft, CheckCircle, Lock, Eye, FileCheck } from 'lucide-rea
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
-const SecureDataManagement = () => {
-  const navigate = useNavigate();
-
-  const features = [
+export const features = [
     {
       icon: Lock,
       title: 'End-to-End Encryption',
@@ -28,16 +25,19 @@ const SecureDataManagement = () => {
       title: 'Compliance Monitoring',
       description: 'Automated compliance monitoring ensures adherence to HIPAA, GDPR, and other healthcare regulations with real-time alerts and reporting.'
     }
-  ];
+];
 
-  const benefits = [
+export const benefits = [
     'Protect patient privacy',
     'Meet regulatory requirements',
     'Prevent data breaches',
     'Ensure data integrity',
     'Enable secure collaboration',
     'Maintain audit compliance'
-  ];
+];
+
+const SecureDataManagement = () => {
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50">
