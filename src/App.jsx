@@ -27,7 +27,7 @@ function App() {
       
       <Routes>
         <Route path="/" element={
-          <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+          <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50">
             <Header />
             <Hero />
             <About />

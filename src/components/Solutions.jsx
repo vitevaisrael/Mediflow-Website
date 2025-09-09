@@ -66,7 +66,7 @@ const Solutions = () => {
   };
 
   return (
-    <section id="solutions" className="py-20 px-6 bg-gradient-to-br from-blue-50 to-purple-50">
+    <section id="solutions" className="py-20 px-6 bg-gradient-to-br from-blue-50 to-green-50">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

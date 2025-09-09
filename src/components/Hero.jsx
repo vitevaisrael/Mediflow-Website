@@ -83,11 +83,11 @@ const Hero = () => {
             {/* Trust Indicators */}
             <div className="flex items-center space-x-8 pt-8">
               <div className="flex items-center space-x-2">
-                <Shield className="h-5 w-5 text-teal-600" />
+                <Shield className="h-5 w-5 text-green-600" />
                 <span className="text-sm text-gray-700 font-medium">HIPAA Compliant</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Brain className="h-5 w-5 text-purple-600" />
+                <Brain className="h-5 w-5 text-blue-600" />
                 <span className="text-sm text-gray-700 font-medium">AI-Powered</span>
               </div>
             </div>
@@ -132,7 +132,7 @@ const Hero = () => {
                 className="absolute -top-4 -left-4 glass-effect rounded-xl p-3 pulse-glow"
               >
                 <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                   <span className="text-xs font-medium text-gray-800">Real-time Analysis</span>
                 </div>
               </motion.div>

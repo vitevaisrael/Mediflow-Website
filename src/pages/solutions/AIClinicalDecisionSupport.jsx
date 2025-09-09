@@ -40,7 +40,7 @@ const AIClinicalDecisionSupport = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50">
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="container mx-auto px-6 py-4">
