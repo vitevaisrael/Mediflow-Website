@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Activity, Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const scrollToSection = (sectionId) => {
@@ -75,14 +76,20 @@ const Footer = () => {
             <span className="text-lg font-semibold">Solutions</span>
             <div className="space-y-2">
               {[
-                'Data Organization',
-                'AI Decision Support',
-                'Analytics Platform',
-                'Workflow Automation'
-              ].map((solution) => (
-                <p key={solution} className="text-slate-300 hover:text-white transition-colors cursor-pointer">
-                  {solution}
-                </p>
+                { name: 'Data Organization', route: '/solutions/medical-data-organization' },
+                { name: 'AI Decision Support', route: '/solutions/ai-clinical-decision-support' },
+                { name: 'Analytics Platform', route: '/solutions/advanced-analytics-platform' },
+                { name: 'Workflow Automation', route: '/solutions/workflow-automation' },
+                { name: 'Secure Data Management', route: '/solutions/secure-data-management' },
+                { name: 'Collaborative Platform', route: '/solutions/collaborative-platform' }
+              ].map(({ name, route }) => (
+                <Link
+                  key={name}
+                  to={route}
+                  className="block text-slate-300 hover:text-white focus:text-white focus:outline-none transition-colors cursor-pointer"
+                >
+                  {name}
+                </Link>
               ))}
             </div>
           </motion.div>
