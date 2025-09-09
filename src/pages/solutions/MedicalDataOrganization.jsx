@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Database, ArrowLeft, CheckCircle, BarChart3, Shield, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -40,7 +41,23 @@ const MedicalDataOrganization = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50">
+    <>
+      <Helmet>
+        <title>Medical Data Organization | Mediflow</title>
+        <meta
+          name="description"
+          content="AI-powered categorization for searchable, structured medical records."
+        />
+        <meta
+          property="og:title"
+          content="Medical Data Organization | Mediflow"
+        />
+        <meta
+          property="og:description"
+          content="AI-powered categorization for searchable, structured medical records."
+        />
+      </Helmet>
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50">
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="container mx-auto px-6 py-4">
@@ -150,7 +167,8 @@ const MedicalDataOrganization = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 
