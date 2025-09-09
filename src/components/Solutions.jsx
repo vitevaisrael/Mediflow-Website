@@ -5,10 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { toast } from '@/components/ui/use-toast';
 
-const Solutions = () => {
-  const navigate = useNavigate();
-  
-  const solutions = [
+export const solutions = [
     {
       icon: Database,
       title: 'Medical Data Organization',
@@ -51,7 +48,10 @@ const Solutions = () => {
       features: ['Team collaboration', 'Secure messaging', 'Shared insights', 'Care coordination'],
       route: '/solutions/collaborative-platform'
     }
-  ];
+];
+
+const Solutions = () => {
+  const navigate = useNavigate();
 
   const handleLearnMore = (solution) => {
     if (solution.route) {

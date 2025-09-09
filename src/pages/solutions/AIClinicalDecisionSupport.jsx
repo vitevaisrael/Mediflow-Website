@@ -4,10 +4,7 @@ import { Brain, ArrowLeft, CheckCircle, TrendingUp, Shield, Target } from 'lucid
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
-const AIClinicalDecisionSupport = () => {
-  const navigate = useNavigate();
-
-  const features = [
+export const features = [
     {
       icon: Brain,
       title: 'Predictive Analytics',
@@ -28,16 +25,19 @@ const AIClinicalDecisionSupport = () => {
       title: 'Outcome Prediction',
       description: 'AI models predict treatment outcomes and recovery timelines, helping clinicians set realistic expectations and optimize care plans.'
     }
-  ];
+];
 
-  const benefits = [
+export const benefits = [
     'Improve diagnostic accuracy by 40%',
     'Reduce medical errors by 60%',
     'Enhance patient outcomes',
     'Optimize treatment protocols',
     'Enable early intervention',
     'Support evidence-based decisions'
-  ];
+];
+
+const AIClinicalDecisionSupport = () => {
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50">

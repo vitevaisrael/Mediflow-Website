@@ -4,10 +4,7 @@ import { Database, ArrowLeft, CheckCircle, BarChart3, Shield, Zap } from 'lucide
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
-const MedicalDataOrganization = () => {
-  const navigate = useNavigate();
-
-  const features = [
+export const features = [
     {
       icon: Database,
       title: 'Automated Data Extraction',
@@ -28,16 +25,19 @@ const MedicalDataOrganization = () => {
       title: 'HIPAA Compliance',
       description: 'Built-in compliance features ensure all data handling meets healthcare regulations and security standards.'
     }
-  ];
+];
 
-  const benefits = [
+export const benefits = [
     'Reduce data entry time by 80%',
     'Improve data accuracy by 95%',
     'Enable instant data retrieval',
     'Ensure regulatory compliance',
     'Streamline clinical workflows',
     'Enhance patient care quality'
-  ];
+];
+
+const MedicalDataOrganization = () => {
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50">

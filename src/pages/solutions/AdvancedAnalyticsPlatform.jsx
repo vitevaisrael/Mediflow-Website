@@ -4,10 +4,7 @@ import { BarChart3, ArrowLeft, CheckCircle, TrendingUp, PieChart, Activity } fro
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
-const AdvancedAnalyticsPlatform = () => {
-  const navigate = useNavigate();
-
-  const features = [
+export const features = [
     {
       icon: BarChart3,
       title: 'Custom Dashboards',
@@ -28,16 +25,19 @@ const AdvancedAnalyticsPlatform = () => {
       title: 'Performance Metrics',
       description: 'Track key performance indicators and operational efficiency metrics with automated alerts and benchmarking capabilities.'
     }
-  ];
+];
 
-  const benefits = [
+export const benefits = [
     'Make data-driven decisions',
     'Identify operational inefficiencies',
     'Track patient outcome trends',
     'Optimize resource allocation',
     'Monitor compliance metrics',
     'Improve financial performance'
-  ];
+];
+
+const AdvancedAnalyticsPlatform = () => {
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50">

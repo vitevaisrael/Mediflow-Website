@@ -4,10 +4,7 @@ import { Users, ArrowLeft, CheckCircle, MessageSquare, Share2, Calendar } from '
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
-const CollaborativePlatform = () => {
-  const navigate = useNavigate();
-
-  const features = [
+export const features = [
     {
       icon: Users,
       title: 'Team Collaboration',
@@ -28,16 +25,19 @@ const CollaborativePlatform = () => {
       title: 'Care Coordination',
       description: 'Integrated care coordination tools help manage patient transitions, appointments, and multi-disciplinary treatment plans.'
     }
-  ];
+];
 
-  const benefits = [
+export const benefits = [
     'Improve care coordination',
     'Enhance team communication',
     'Reduce care gaps',
     'Streamline patient transitions',
     'Share best practices',
     'Increase patient satisfaction'
-  ];
+];
+
+const CollaborativePlatform = () => {
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50">
