@@ -37,7 +37,7 @@ export default async function handler(req, res) {
 
     const mailOptions = {
       from: `MediFlow Website <${process.env.GMAIL_USER}>`,
-      to: 'vitevabygenore@gmail.com',
+      to: process.env.TO_EMAIL || 'vitevabygenore@gmail.com',
       replyTo: email,
       subject,
       html,
