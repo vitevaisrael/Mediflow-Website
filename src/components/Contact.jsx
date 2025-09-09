@@ -90,7 +90,10 @@ const Contact = () => {
       const response = await fetch('/api/send', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          captchaToken: '' // No CAPTCHA configured, send empty token
+        }),
       });
 
       const result = await response.json();
