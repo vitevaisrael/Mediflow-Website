@@ -51,7 +51,18 @@ const Contact = () => {
       console.error(err);
               toast({
           title: 'Sending failed',
-          description: 'Please try again or email us at contact@mediflow.io.',
+          description: (
+            <span>
+              Please try again or email us at{' '}
+              <a
+                href="mailto:contact@mediflow.io"
+                aria-label="Email MediFlow"
+              >
+                contact@mediflow.io
+              </a>
+              .
+            </span>
+          ),
           duration: 5000,
         });
     } finally {
@@ -64,13 +75,17 @@ const Contact = () => {
       icon: Mail,
       title: 'Email Us',
       content: 'contact@mediflow.io',
-      description: 'Send us an email anytime'
+      description: 'Send us an email anytime',
+      href: 'mailto:contact@mediflow.io',
+      ariaLabel: 'Email MediFlow'
     },
     {
       icon: Phone,
       title: 'Call Us',
       content: '+972 53-5236450',
-      description: 'we will get back to you within 24 hours'
+      description: 'we will get back to you within 24 hours',
+      href: 'tel:+972535236450',
+      ariaLabel: 'Call MediFlow'
     }
   ];
 
@@ -232,7 +247,15 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-800 mb-1">{info.title}</h4>
-                    <p className="text-lg font-medium text-blue-600 mb-1">{info.content}</p>
+                    <p className="text-lg font-medium text-blue-600 mb-1">
+                      {info.href ? (
+                        <a href={info.href} aria-label={info.ariaLabel}>
+                          {info.content}
+                        </a>
+                      ) : (
+                        info.content
+                      )}
+                    </p>
                     <p className="text-sm text-slate-600">{info.description}</p>
                   </div>
                 </motion.div>

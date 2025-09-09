@@ -99,11 +99,23 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-slate-400" />
-                <span className="text-slate-300">contact@mediflow.io</span>
+                <a
+                  href="mailto:contact@mediflow.io"
+                  aria-label="Email MediFlow"
+                  className="text-slate-300"
+                >
+                  contact@mediflow.io
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-slate-400" />
-                <span className="text-slate-300">+972535236450</span>
+                <a
+                  href="tel:+972535236450"
+                  aria-label="Call MediFlow"
+                  className="text-slate-300"
+                >
+                  +972535236450
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-slate-400" />
