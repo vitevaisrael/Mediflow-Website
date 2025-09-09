@@ -9,14 +9,14 @@ export const solutions = [
     {
       icon: Database,
       title: 'Medical Data Organization',
-      description: 'Transform unstructured medical records into organized, searchable databases with automated categorization and intelligent tagging.',
+      description: 'Stop wasting time searching for patient information. Our AI instantly organizes medical records so you can find what you need in seconds, not minutes.',
       features: ['Automated data extraction', 'Smart categorization', 'Real-time synchronization', 'HIPAA compliance'],
       route: '/solutions/medical-data-organization'
     },
     {
       icon: Brain,
       title: 'AI Clinical Decision Support',
-      description: 'Leverage advanced machine learning algorithms to provide evidence-based recommendations and predictive insights for better patient outcomes.',
+      description: 'Get evidence-based treatment recommendations instantly. Our AI analyzes patient data against clinical guidelines to suggest the most effective care options.',
       features: ['Predictive analytics', 'Risk assessment', 'Treatment recommendations', 'Outcome prediction'],
       route: '/solutions/ai-clinical-decision-support'
     },
@@ -76,12 +76,11 @@ const Solutions = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-            Comprehensive{' '}
-            <span className="gradient-text">Healthcare Solutions</span>
+            Save Time and{' '}
+            <span className="gradient-text">Improve Patient Care</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Our integrated suite of AI-powered tools transforms how healthcare organizations 
-            manage data, make decisions, and deliver patient care.
+            Our AI-powered platform helps healthcare teams work smarter by reducing documentation time and improving diagnostic accuracy.
           </p>
         </motion.div>
 
@@ -136,11 +135,10 @@ const Solutions = () => {
           className="mt-20 text-center glass-effect rounded-2xl p-12"
         >
           <h3 className="text-3xl font-bold text-gray-900 mb-4">
-            Ready to Transform Your Healthcare Operations?
+            See Why 500+ Healthcare Teams Choose MediFlow
           </h3>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Join hundreds of healthcare organizations already using MediFlow to improve 
-            patient outcomes and operational efficiency.
+            See how MediFlow can help your healthcare team work more efficiently. Book a personalized demo.
           </p>
           <Button
             onClick={() => {
