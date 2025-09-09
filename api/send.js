@@ -1,6 +1,4 @@
 import nodemailer from 'nodemailer';
-import DOMPurify from 'dompurify';
-import { JSDOM } from 'jsdom';
 
 export default async function handler(req, res) {
   // Only allow POST requests
@@ -16,16 +14,23 @@ export default async function handler(req, res) {
       return res.status(400).json({ ok: false, error: 'Missing required fields' });
     }
 
-    // Create DOMPurify instance for server-side sanitization
-    const window = new JSDOM('').window;
-    const purify = DOMPurify(window);
+    // Simple sanitization function to prevent XSS
+    const sanitize = (str) => {
+      if (!str) return '';
+      return str
+        .trim()
+        .replace(/[<>]/g, '') // Remove < and > characters
+        .replace(/javascript:/gi, '') // Remove javascript: protocol
+        .replace(/on\w+=/gi, '') // Remove event handlers
+        .substring(0, 2000); // Limit length
+    };
 
     // Sanitize all user inputs to prevent XSS
-    const sanitizedName = purify.sanitize(name.trim());
-    const sanitizedEmail = purify.sanitize(email.trim());
-    const sanitizedOrganization = organization ? purify.sanitize(organization.trim()) : '';
-    const sanitizedPhone = phone ? purify.sanitize(phone.trim()) : '';
-    const sanitizedMessage = purify.sanitize(message.trim());
+    const sanitizedName = sanitize(name);
+    const sanitizedEmail = sanitize(email);
+    const sanitizedOrganization = organization ? sanitize(organization) : '';
+    const sanitizedPhone = phone ? sanitize(phone) : '';
+    const sanitizedMessage = sanitize(message);
 
     // Additional validation
     if (sanitizedName.length > 100 || sanitizedEmail.length > 100 || 
@@ -61,14 +66,16 @@ export default async function handler(req, res) {
       </div>
     `;
 
-    // Ensure TO_EMAIL is set
+    // Use TO_EMAIL if set, otherwise fallback (with warning)
+    const recipientEmail = process.env.TO_EMAIL || 'vitevabygenore@gmail.com';
+    
     if (!process.env.TO_EMAIL) {
-      return res.status(500).json({ ok: false, error: 'Email configuration missing' });
+      console.warn('TO_EMAIL environment variable not set, using fallback email');
     }
 
     const mailOptions = {
       from: `MediFlow Website <${process.env.GMAIL_USER}>`,
-      to: process.env.TO_EMAIL,
+      to: recipientEmail,
       replyTo: sanitizedEmail,
       subject,
       html,
