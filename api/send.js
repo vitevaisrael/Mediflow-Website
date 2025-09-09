@@ -1,5 +1,36 @@
 import nodemailer from 'nodemailer';
 
+// Simple in-memory rate limiting
+const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
+const RATE_LIMIT_MAX = 5; // max requests per window
+const requests = new Map();
+
+async function verifyCaptcha(token) {
+  const secret = process.env.RECAPTCHA_SECRET || process.env.HCAPTCHA_SECRET;
+  if (!secret) return true; // No CAPTCHA configured
+  if (!token) return false;
+
+  const verifyUrl = process.env.RECAPTCHA_SECRET
+    ? 'https://www.google.com/recaptcha/api/siteverify'
+    : 'https://hcaptcha.com/siteverify';
+
+  const params = new URLSearchParams();
+  params.append('secret', secret);
+  params.append('response', token);
+
+  try {
+    const response = await fetch(verifyUrl, {
+      method: 'POST',
+      body: params,
+    });
+    const data = await response.json();
+    return data.success;
+  } catch (err) {
+    console.error('CAPTCHA verification error:', err);
+    return false;
+  }
+}
+
 export default async function handler(req, res) {
   // Only allow POST requests
   if (req.method !== 'POST') {
@@ -7,7 +38,28 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, email, organization, phone, message } = req.body || {};
+    const { name, email, organization, phone, message, captchaToken } = req.body || {};
+
+    // Rate limiting based on IP
+    const ip = req.headers['x-forwarded-for']?.split(',')[0] || req.socket.remoteAddress;
+    const now = Date.now();
+    const entry = requests.get(ip) || { count: 0, start: now };
+    if (now - entry.start > RATE_LIMIT_WINDOW_MS) {
+      entry.count = 0;
+      entry.start = now;
+    }
+    entry.count += 1;
+    requests.set(ip, entry);
+
+    if (entry.count > RATE_LIMIT_MAX) {
+      return res.status(429).json({ ok: false, error: 'Rate limit exceeded. Please try again later.' });
+    }
+
+    // Verify CAPTCHA if configured
+    const captchaOk = await verifyCaptcha(captchaToken);
+    if (!captchaOk) {
+      return res.status(400).json({ ok: false, error: 'CAPTCHA verification failed' });
+    }
 
     // Validate required fields
     if (!email || !message || !name) {
