@@ -29,7 +29,7 @@ export const features = [
 ];
 
 export const benefits = [
-    'Reduce manual tasks by 70%',
+    'Significantly reduce manual tasks',
     'Eliminate workflow bottlenecks',
     'Improve operational efficiency',
     'Minimize human errors',

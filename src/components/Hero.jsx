@@ -152,8 +152,8 @@ const Hero = () => {
                 className="absolute -bottom-4 -right-4 glass-effect rounded-xl p-3"
               >
                 <div className="text-center">
-                  <div className="text-lg font-bold gradient-text">99.7%</div>
-                  <div className="text-xs text-gray-600">Accuracy Rate</div>
+                  <div className="text-lg font-bold gradient-text">High</div>
+                  <div className="text-xs text-gray-600">Accuracy</div>
                 </div>
               </motion.div>
             </div>

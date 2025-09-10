@@ -29,8 +29,8 @@ export const features = [
 ];
 
 export const benefits = [
-    'Improve diagnostic accuracy by 40%',
-    'Reduce medical errors by 60%',
+    'Help improve diagnostic accuracy',
+    'Help reduce medical errors',
     'Enhance patient outcomes',
     'Optimize treatment protocols',
     'Enable early intervention',

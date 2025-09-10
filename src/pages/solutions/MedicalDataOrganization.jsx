@@ -29,8 +29,8 @@ export const features = [
 ];
 
 export const benefits = [
-    'Reduce data entry time by 80%',
-    'Improve data accuracy by 95%',
+    'Significantly reduce data entry time',
+    'Improve data accuracy',
     'Enable instant data retrieval',
     'Ensure regulatory compliance',
     'Streamline clinical workflows',

@@ -139,7 +139,7 @@ const Solutions = () => {
             Ready to Transform Your Healthcare Operations?
           </h3>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Join hundreds of healthcare organizations already using MediFlow to improve 
+            Discover how MediFlow can help your healthcare organization improve 
             patient outcomes and operational efficiency.
           </p>
           <Button

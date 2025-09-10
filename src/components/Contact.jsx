@@ -17,7 +17,7 @@ export const contactInfo = [
       icon: Phone,
       title: 'Call Us',
       content: '+972 53-5236450',
-      description: 'we will get back to you within 24 hours'
+      description: 'we will get back to you promptly'
     }
 ];
 
@@ -328,7 +328,7 @@ const Contact = () => {
                   'HIPAA compliant and secure',
                   '24/7 technical support',
                   'Seamless integration',
-                  'Proven ROI for healthcare organizations'
+                  'Focus on healthcare ROI'
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-center space-x-2">
                     <CheckCircle className="h-5 w-5 text-green-600" />

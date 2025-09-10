@@ -5,18 +5,18 @@ import { Target, Users, Award, TrendingUp } from 'lucide-react';
 export const stats = [
     {
       icon: Users,
-      value: '500+',
-      label: 'Healthcare Partners'
+      value: 'Growing',
+      label: 'Partner Network'
     },
     {
       icon: Award,
-      value: '99.7%',
+      value: 'High',
       label: 'Accuracy Rate'
     },
     {
       icon: TrendingUp,
-      value: '40%',
-      label: 'Efficiency Increase'
+      value: 'Improved',
+      label: 'Efficiency'
     },
     {
       icon: Target,
