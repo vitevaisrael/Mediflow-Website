@@ -48,15 +48,15 @@ const Hero = () => {
                 className="inline-flex items-center space-x-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium"
               >
                 <Zap className="h-4 w-4" />
-                <span>Turn Medical Data Into Better Patient Outcomes</span>
+                <span>AI-Powered Clinical Decision Support Solutions</span>
               </motion.div>
               
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-gray-900">
-                Transform Medical Records Into <span className="gradient-text">Clinical Intelligence</span>
+                <span className="gradient-text">Intelligent</span> Digital Medicine
               </h1>
               
               <p className="text-xl text-gray-700 leading-relaxed">
-                MediFlow transforms unstructured medical data into actionable clinical insights. Our AI-powered platform helps healthcare teams make faster, more accurate diagnoses while reducing documentation time.
+                MediFlow revolutionizes medical data organization and clinical decision-making through advanced algorithms and innovative AI-Powered systems, empowering healthcare professionals to deliver exceptional patient care.
               </p>
             </div>
 
@@ -66,7 +66,7 @@ const Hero = () => {
                 size="lg"
                 className="medical-gradient text-white hover:medical-gradient-hover hover:shadow-xl transition-all duration-300 group"
               >
-                See Live Demo
+                Start Your Journey
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               

@@ -85,11 +85,12 @@ const MedicalDataOrganization = () => {
               <Database className="h-10 w-10 text-white" />
             </div>
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-gray-900">
-              Find Patient Information{' '}
-              <span className="gradient-text">Faster</span>
+              Medical Data{' '}
+              <span className="gradient-text">Organization</span>
             </h1>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Stop wasting time searching through medical records. Our AI automatically organizes and indexes patient data, making information more searchable and accessible.
+              Transform unstructured medical records into organized, searchable databases with 
+              automated categorization and intelligent tagging powered by advanced AI.
             </p>
           </motion.div>
 

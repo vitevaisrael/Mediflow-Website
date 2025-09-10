@@ -132,10 +132,12 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            <span className="gradient-text">Schedule Your Free Demo</span> Today
+            Let's Start Your{' '}
+            <span className="gradient-text">Healthcare Transformation</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            See how MediFlow can help improve your workflow and patient care. Book a personalized demo with our healthcare technology experts.
+            Ready to revolutionize your medical data management? Get in touch with our team 
+            to discuss how MediFlow can transform your healthcare operations.
           </p>
         </motion.div>
 
@@ -285,7 +287,8 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-bold text-slate-800 mb-6">Get in Touch</h3>
               <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                Our healthcare technology experts will show you exactly how MediFlow can save time and improve patient outcomes in your specific environment.
+                Our team of healthcare technology experts is ready to discuss your specific 
+                needs and show you how MediFlow can transform your organization.
               </p>
             </div>
 
@@ -324,8 +327,8 @@ const Contact = () => {
                 {[
                   'HIPAA compliant and secure',
                   '24/7 technical support',
-                  'Easy integration with existing systems',
-                  'Trusted by healthcare organizations'
+                  'Seamless integration',
+                  'Proven ROI for healthcare organizations'
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-center space-x-2">
                     <CheckCircle className="h-5 w-5 text-green-600" />

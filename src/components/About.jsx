@@ -47,11 +47,11 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-            Built by Healthcare Professionals,{' '}
-            <span className="gradient-text">For Healthcare Professionals</span>
+            Pioneering the Future of{' '}
+            <span className="gradient-text">Medical Intelligence</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Every day, healthcare teams waste hours navigating complex medical records when they should be focused on patients. At MediFlow, we solve this problem by turning scattered medical data into clear, actionable insights that help clinicians make better decisions faster.
+            At MediFlow, we're dedicated to transforming healthcare and shaping the future of digital medicine. We believe that organization and management of complex medical data are fundamental to develop the best Clinical Decision Support tools. By harnessing advanced AI solutions and powerful algorithms, we deliver real-time insights and deep analytics — enabling our systems to provide intelligent, evidence-based clinical decision support.
           </p>
         </motion.div>
 
@@ -76,7 +76,7 @@ const About = () => {
           >
             <h3 className="text-3xl font-bold text-gray-900">Our Mission</h3>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Our mission is simple: give healthcare professionals the right information at the right time. We organize complex medical data into clear insights, so clinicians can focus on what they do best—caring for patients.
+              We believe that every healthcare decision should be informed, precise, and supported by the most updated available data. At MediFlow, we harness advanced AI and data-management algorithms to organize and interpret complex clinical information, transforming it into real-time, guideline-linked insights. Our mission is to empower healthcare professionals with transparent and intelligent decision support, improving patient outcomes and shaping the future of digital medicine.
             </p>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
